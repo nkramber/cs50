@@ -27,7 +27,7 @@ def get_order():
             else:
                 continue
         except EOFError:
-            print("/n")
+            print("")
             break
         
     
