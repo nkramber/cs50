@@ -4,25 +4,19 @@ def main():
 
 def get_percent():
     while True:
-        fuel_level = input("Input fuel level as a fraction: ").split("/")
-        if len(fuel_level) != 2:
-            continue
         try:
-            for i in range(len(fuel_level)):
-                fuel_level[i] = int(fuel_level[i])
-            percent = int(fuel_level[0] / fuel_level[1] * 100)
-        except ValueError:
-            continue
-        except ZeroDivisionError:
-            continue
-        if percent > 100:
-            continue
-        if percent == 0 or percent == 1:
-            percent = "E"
-        elif percent == 99 or percent == 100:
-            percent = "F"
-        else:
-            percent = str(percent) + "%"
-        return percent
+            x, y = input("Input fuel level as a fraction: ").split("/")
+            x = int(x)
+            y = int(y)
+            fuel = int(x / y * 100)
+            if fuel < 99 and fuel > 1:
+                return str(fuel) + "%"
+            if fuel == 0 or fuel == 1:
+                return "E"
+            if fuel == 99 or fuel == 100:
+                return "F"
+        except (ValueError, ZeroDivisionError):
+            pass
+
 
 main()
