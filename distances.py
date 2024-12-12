@@ -15,6 +15,9 @@ def main():
     except ValueError:
         print(f"Can't convert '{distances[spacecraft]}' to a float")
         return
+    except KeyError:
+        print(f"Can't find '{spacecraft}'")
+        return
 
     m = convert(au)
     print(f"{m} meters away")
