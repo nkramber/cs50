@@ -11,12 +11,13 @@ def main():
         except (ValueError, IndexError):
             print("Incorrect input! Try again.")
     
+    print("\nRunning simulation until you win...")
+
     tries = 0
-    
     while True:
+        tries += 1
         if random.randint(1, odds) == 1:
             money_spent = cost_per_ticket * tries
-            
             time_unit = "weeks"
             time_to_win = int(tries / plays_per_draw / draws_per_week)
             if time_to_win > 52:
@@ -29,8 +30,6 @@ def main():
                 
             print(f"You win! It took you {time_to_win} {time_unit} to win. You spent ${money_spent}. You bought {tries} tickets. {result}")
             break
-        else:
-            tries += 1
                 
 def get_above_zero(s):
     while True:
