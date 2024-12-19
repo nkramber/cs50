@@ -11,7 +11,7 @@ def main():
         except (ValueError, IndexError):
             print("Incorrect input! Try again.")
     
-    tries = 0
+    tries = 1
     
     while True:
         if random.randint(1, odds) == 1:
